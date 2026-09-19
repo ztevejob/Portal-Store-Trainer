@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Pelaporan & Training | Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#0f172a',
+                            600: '#020617',
+                            accent: '#2563eb',
+                            apple: '#1d1d1f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+    </style>
+</head>
+<body class="min-p-0 m-0 flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-200/85">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-lg shadow-md">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg tracking-tight text-gray-900">Portal Pelaporan & Training</h1>
+                    <p class="text-xs text-gray-500 hidden sm:block">Centralized Operations & Training Hub</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                    <span class="w-2 h-2 mr-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Live System
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero & Search Filter Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6 w-full">
+        <div class="bg-gradient-to-r from-gray-900 via-gray-800 to-black rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-2xl">
+                <span class="text-xs font-semibold tracking-wider uppercase text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Quick Navigation</span>
+                <h2 class="text-2xl sm:text-4xl font-bold tracking-tight mt-3">Find Training & Reports Instantly</h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-2">Access all store operational forms, training materials, keynote decks, and mandatory updates seamlessly.</p>
+                
+                <!-- Search Input -->
+                <div class="mt-6 relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search modules, links, or keywords (e.g., PNR, Open Studio, Pemadanan)..." class="w-full pl-11 pr-4 py-3 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base transition-all">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 flex-grow w-full">
+        <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card: Training Plan & Result PNR -->
+            <div class="card-item bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-300 group" data-title="training plan result pnr">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-gray-100 text-gray-600">Monthly Update</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Training Plan & Result PNR</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Update the plan and the result of the training session held in the store, full regular updates every month. Access open with gmail SEED account.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100">
+                    <a href="https://forms.gle/qoM12faHQzJRJxF26" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-gray-900 hover:bg-blue-600 text-white rounded-xl text-sm font-medium transition-colors shadow-sm">
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i> Form PNR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Material Keynote for Training -->
+            <div class="card-item bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-300 group" data-title="material keynote training apple mandatory new staff">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-gray-100 text-gray-600">Mega Cloud</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-purple-600 transition-colors">Material Keynote for Training</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Access official keynote files and onboarding module packages for retail staff training.
+                    </p>
+                    <div class="mt-4 space-y-2">
+                        <div class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-gray-800"><i class="fa-brands fa-apple mr-1.5 text-gray-900"></i> Apple Mandatory</span>
+                            <a href="https://mega.nz/folder/Mld3iL5K#cZi_NcO2KbcupTim7Uafcw" target="_blank" class="text-xs text-blue-600 hover:underline font-semibold">Open Folder <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                        </div>
+                        <div class="bg-gray-50 p-2.5 rounded-xl border border-gray-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-gray-800"><i class="fa-solid fa-user-graduate mr-1.5 text-purple-600"></i> New Staff Module</span>
+                            <a href="https://mega.nz/folder/d8Fg3Ywa#MobjiJndMsUhJ-fQJ4WErQ" target="_blank" class="text-xs text-blue-600 hover:underline font-semibold">Open Folder <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-400 text-center">
+                    Secure Cloud Mega Storage
+                </div>
+            </div>
+
+            <!-- Card: Open Studio Report -->
+            <div class="card-item bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-300 group" data-title="open studio report presenter participant daily submission schedule">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">Daily Routine</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-amber-600 transition-colors">Open Studio Report</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Presenter & Participant Daily Submission Schedule. Ensure timely reporting according to schedule.
+                    </p>
+                    
+                    <div class="mt-4 bg-gray-50 p-3 rounded-2xl border border-gray-100 text-xs space-y-2">
+                        <div class="font-semibold text-gray-900">Submission Schedule:</div>
+                        <div class="flex justify-between text-gray-700">
+                            <span>Weekdays (Mon – Fri):</span>
+                            <span class="font-medium text-gray-900">13:00, 15:00, 18:00</span>
+                        </div>
+                        <div class="flex justify-between text-gray-700">
+                            <span>Weekends (Sat – Sun):</span>
+                            <span class="font-medium text-gray-900">13:00, 18:00</span>
+                        </div>
+                        <div class="pt-1 text-[11px] text-gray-500 italic border-t border-gray-200">
+                            *Note: Save doc photos/videos in respective Google Drive folders.
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100">
+                    <a href="https://forms.gle/cjE3NPNqQhPwHyQZ9" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-medium transition-colors shadow-sm">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Submission Link
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: EMS Ecosystem Mastery Session -->
+            <div class="card-item bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-300 group" data-title="ems ecosystem mastery session 2026 product demo accessories questions exercise national report">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">5-Min Daily</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-emerald-600 transition-colors">EMS Ecosystem Mastery Session</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        Short 5-minute daily training after briefings to boost product demo confidence and probing skills.
+                    </p>
+
+                    <div class="mt-4 bg-gray-50 p-3 rounded-2xl border border-gray-100 text-xs space-y-1.5">
+                        <div class="font-semibold text-gray-900">Focus Materials:</div>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><strong class="text-gray-800">Product Demo:</strong> Mac & Apple Watch features</li>
+                            <li><strong class="text-gray-800">Accessories Tips:</strong> Benefits & explanation</li>
+                            <li><strong class="text-gray-800">Questions Exercise:</strong> Min. 3 probing questions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100">
+                    <a href="https://forms.gle/c3ye8Xt41YVQ32cTA" target="_blank" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-medium transition-colors shadow-sm">
+                        <i class="fa-solid fa-chart-line mr-2"></i> Link Report National
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card: Pemadanan DATA -->
+            <div class="card-item bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-all duration-300 group md:col-span-2 lg:col-span-2" data-title="pemadanan data employee update sales coach email store transfer sharepoint pos cashier">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-red-100 text-red-700"><i class="fa-solid fa-lock mr-1"></i> POS / Cashier Computers ONLY</span>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">Pemadanan DATA</h3>
+                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                        All employees are required to complete and update this information (Employment data after 5-year gap, Sales Coach E-mail format <code class="bg-gray-100 px-1 py-0.5 rounded text-xs text-indigo-600 font-mono">name.digimap@gmail.com</code>, transfers, or resignations).
+                    </p>
+
+                    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-gray-50 p-3 rounded-2xl border border-gray-100 space-y-1.5">
+                            <span class="font-semibold text-gray-900 flex items-center"><i class="fa-solid fa-list-check mr-1.5 text-indigo-600"></i> Standard Positions:</span>
+                            <p class="text-gray-600 leading-relaxed">Supervisor, MT, Cashier, Store Trainer, Store Trainer (Pt), Sales Staff, Sales Staff (Dw), Sales Staff (Ns)</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-2xl border border-gray-100 space-y-1.5">
+                            <span class="font-semibold text-gray-900 flex items-center"><i class="fa-solid fa-folder-tree mr-1.5 text-indigo-600"></i> Navigation & Guidelines:</span>
+                            <p class="text-gray-600 leading-relaxed">Fill tab/sheet corresponding to Store Code (<code class="font-mono bg-gray-200 px-1 rounded">M1xx</code>, <code class="font-mono bg-gray-200 px-1 rounded">M2xx</code>). Locked sheets are restricted. Contact Trainer HO for new store codes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <span class="text-xs text-amber-600 font-medium bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200 w-full sm:w-auto text-center">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Accessible ONLY from POS/Cashier Computers
+                    </span>
+                    <a href="https://mapcoid-my.sharepoint.com/:x:/g/personal/novi_riyanto_map_co_id/IQBcAJVachwzSry8CfM1QbRfAaPzacAU5zwBiU4fzTXimQw" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center py-2.5 px-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-medium transition-colors shadow-sm">
+                        <i class="fa-solid fa-shield-halved mr-2"></i> Access SharePoint Link
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty State for Search -->
+        <div id="noResults" class="hidden text-center py-16">
+            <div class="w-16 h-16 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                <i class="fa-solid fa-face-frown"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">No matching reports or training found</h3>
+            <p class="text-gray-500 text-sm mt-1">Try searching with different keywords like 'PNR', 'Keynote', or 'Studio'.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-3 sm:space-y-0">
+            <p>&copy; 2026 Retail Operations & Training Portal. All rights reserved.</p>
+            <div class="flex items-center space-x-4">
+                <span>SEEDS Ecosystem Hub</span>
+                <span>•</span>
+                <span>Retail Standards</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Dynamic Card Search -->
+    <script>
+        function filterCards() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase().trim();
+            const cards = document.getElementsByClassName('card-item');
+            const noResults = document.getElementById('noResults');
+            let visibleCount = 0;
+
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const titleAttr = card.getAttribute('data-title') || '';
+                const textContent = card.innerText.toLowerCase();
+
+                if (titleAttr.includes(filter) || textContent.includes(filter)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
